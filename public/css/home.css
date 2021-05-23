@@ -1,0 +1,191 @@
+
+body{
+	padding: 0 0 0;
+	margin:  0 0 0;	
+}
+h1{
+	font-size: 70px;
+}
+h2{
+	font-size: 30px;
+}
+h10{
+	display: inline-block;
+	width: 1000px;
+	font-size: 30px;
+	color: #9F224E;
+	line-height: 50px;
+	border-bottom: 1px solid #E5E5E5;
+	border-top: 1px #E5E5E5;
+}
+h9{
+	display: inline-block;
+	width: 1000px;
+	font-size: 30px;
+	color: #9F224E;
+	line-height: 50px;
+	border-bottom: 1px solid #E5E5E5;
+	border-top: 1px #E5E5E5;
+	margin-top: 100px;
+}
+
+.top {
+	width: 1900px;
+	height: 900px;
+}
+
+.login{
+	border-bottom: 1px solid #007F49;
+	max-width: 1900px;
+	height: 40px;
+}
+.login .left li{
+	font-size: 16px;
+    color: #007f49;
+	border-left: 1px solid #007F49;
+	list-style-type: none;	
+	float: left;
+	line-height: 35px;
+	padding: 3px 150px;
+	
+}
+.login .right a{
+	font-size: 16px;
+    color: #007f49;
+	text-decoration: none;
+	border-left: 1px solid #007F49;
+	list-style: none;	
+	float: right;
+	line-height: 35px;
+	padding: 3px 70px;
+}
+.search{
+	max-width: 1900px;
+	height: 50px;
+}
+.search .left{
+	float: left;	
+}
+.search .right{
+	display: inline-block;
+}
+.search .right input{
+	padding: 14px 200px;
+	box-sizing: border-box;
+	display: inline-block;
+	border: 1.5px solid #007F49 ;
+}
+.search .right button{
+	padding: 14px;
+	color: #007F49;
+	margin: 13px 0 0;
+	box-sizing: border-box;
+	display: inline-block;
+	border: 1.5px solid #007F49 ;
+}
+.search .left img{
+	border-left: 1px solid #007F49;
+	padding: 5px 200px;
+}
+.menu{
+	background-color: #9F224E;
+	max-width: 1900px;
+	height: 40px;
+}
+.menu li a, .noi_dung_xuong{
+	text-transform: uppercase;
+	font-weight: 700;
+	display: inline-block;
+	color: white;
+	text-align: center;
+	text-decoration: none;
+	padding: 10px 15px 10px;
+}
+.menu li:hover ,.hop_xuong:hover .noi_dung_xuong {
+	background-color: #e41111;
+	}
+.menu .hop_xuong{
+	display: inline-block;
+}
+.menu .noi_dung_con{
+	text-transform: uppercase;
+	background-color: #c0104d;
+	display: none;
+	position: absolute;
+	color:rgb(141, 16, 16);
+	z-index: 1;
+}
+.menu .noi_dung_con a{
+	font-weight: 700;
+	color: rgb(247, 247, 247);
+	text-decoration: none;
+	display: block;
+	text-align: left;
+	
+}
+.menu .noi_dung_con a:hover {
+	background-color: rgb(148, 16, 38);
+
+}
+.menu .hop_xuong:hover .noi_dung_con{
+	display: block;
+}
+
+
+.banner{
+	display: inline-block;
+	max-width: 1900px;
+	max-height: 700px;
+}
+.banner .slogan {
+	color: #FEFEFE;
+	padding: 200px 200px;
+	position: absolute;
+	display: inline-block;
+	list-style: none;
+	max-width: 750px;
+	line-height: 30px;
+}
+
+.banner .baner_logo{
+	display:inline-block;
+}
+.banner .baner_logo .img{
+	display: inline-block;
+}
+.main{
+	display: inline-block;
+	width: 1900px;
+	height: 900px;
+	overflow: hidden;
+}
+.main .left{
+	padding-left: 300px;
+	padding-top: 100px;
+	display: inline-block;
+	max-width: 900px;
+	height: 900px;
+}
+.main .dotthi{
+	padding-left: ;
+	padding-top: 50px;
+	display: inline-block;
+	float: left;
+}
+.main .tieude{
+	display: inline-block;
+}
+.main .dotthi a img{
+	display: inline-block;
+	float: left;
+}
+.main .right{
+	display: inline-block;
+	float: right;
+	max-height: 900px;
+	max-width: 500px;
+	
+}
+footer{
+	background-color: #199045;
+}

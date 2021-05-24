@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SignupController;
 use App\Http\Controllers\loginController;
+use App\Http\Controllers\HosoController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,5 +24,7 @@ Route::get('/login', [loginController::class,'index'])->name('login');
 Route::post('/login', [loginController::class,'login'])->name('auth.login');
 Route::get('/logout', [loginController::class,'logout'])->name('auth.logout');
 
+Route::get('/Khaothi/Hoso', [HosoController::class,'show'])->name('hoso.show');
+Route::post('/Khaothi/Hoso', [HosoController::class,'store'])->name('hoso.store');
 
 

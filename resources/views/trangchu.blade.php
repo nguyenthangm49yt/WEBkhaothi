@@ -78,7 +78,7 @@
                             <a href="#">Sửa Đăng Kí Thi</a>
         
                     </div></li>
-                    <li class="hop_xuong"><a href="#" class="noi_dung_xuong">Hồ Sơ Thí Sinh</a>
+                    <li class="hop_xuong"><a href="{{route('hoso.show')}}" class="noi_dung_xuong">Hồ Sơ Thí Sinh</a>
                         <div class="noi_dung_con">
                             <a href="#">Nhập Hồ Sơ</a>
                             <a href="#">Cập Nhật Hồ Sơ</a>

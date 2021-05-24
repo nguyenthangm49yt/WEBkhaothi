@@ -48,7 +48,7 @@
                     </div>
                     <div class="input-box">
                         <i ></i>
-                        <input type="password" placeholder="Nhập lại mật khẩu">
+                        <input type="password" placeholder="Nhập lại mật khẩu" >
                     </div>
                     <div class="tick-box">
                         <input type="checkbox" id="checkbox" name="checkbox"><label class="checkbox-text">Hiện mật khẩu</label>

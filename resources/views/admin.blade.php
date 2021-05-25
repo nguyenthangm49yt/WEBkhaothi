@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 
 
-<!-- edit by khanhvv2 -->
-<!-- edit by khanhv -->
+<!-- edit by thang -->
+<!-- edit by thang v2 -->
 <html>
     <head>
         <title>Đăng Ki</title>

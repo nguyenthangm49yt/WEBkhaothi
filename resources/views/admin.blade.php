@@ -1,7 +1,12 @@
 <!DOCTYPE html>
 
+<<<<<<< HEAD
 <!-- edit by thang 2 -->
 
+=======
+
+<!-- edit by khanh -->
+>>>>>>> master
 <html>
     <head>
         <title>Đăng Ki</title>

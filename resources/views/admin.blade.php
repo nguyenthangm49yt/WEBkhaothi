@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+
+<!-- edit by thang -->
+
 <html>
     <head>
         <title>Đăng Ki</title>

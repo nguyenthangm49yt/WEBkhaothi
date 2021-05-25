@@ -57,7 +57,7 @@
                         <input type="checkbox" id="checkbox" name="checkbox"><label class="checkbox-text">Tôi đã đọc và đồng ý với các điều khoản của trung tâm</label>
                     </div>
                     <div class="btn-box">
-                        <button type="submit">
+                    <button type="submit">
                             Đăng Kí
                         </button>
                     </div>

@@ -6,36 +6,36 @@
     <meta name="viewport" content="width=<body>">
 </head>
 <body>
-    @if(session('message'))
-        <span>
-        <strong>{{session('message')}}</strong>
-        </span>
+    @if(session('alert'))
+        
+        {{session('alert')}}
+      
     @endif 
-        <table border="0" bgcolor="#CCFFFF" width="100%" cellpading="0" cellspacing="0"><tbody><tr><td width="40%" style="font-size: 24; color: #0000FF">&nbsp;&nbsp; Tạo Hồ sơ dự thi</td><td align="right" style="font-size: 12;">Người dùng: &nbsp;<b>{{Auth::user()->email}}</b></td></tr></tbody></table>
-        <form action="{{route('hoso.store')}}" method="post" >
+        <table border="0" bgcolor="#CCFFFF" width="100%" cellpading="0" cellspacing="0"><tbody><tr><td width="40%" style="font-size: 24; color: #0000FF">&nbsp;&nbsp; Cập nhật Hồ sơ dự thi</td><td align="right" style="font-size: 12;">Người dùng: &nbsp;<b>{{Auth::user()->email}}</b></td></tr></tbody></table>
+        <form action="{{route('hoso.updatestore')}}" method="post" >
         {{ csrf_field()}} 
                     <hr><input type="hidden" name="FnAnhhoso" value=""><script>document.cet_DangkyHS.FnAnhhoso.value = "" </script><div><fieldset class="styleset">	<legend><b>A. THÔNG TIN CÁ NHÂN ({{Auth::user()->email}})</b></legend><table width="100%" border="0" cellpadding="0" cellspacing="0" style="font-family: Times New Roman; font-size: 12pt"><tbody><tr height="32"><td width="19%"></td><td width="11%"></td><td width="17%"></td><td width="9%"></td>
                   
                     <td width="11%"></td><td width="20%"></td><td rowspan="5" align="right"><img id="ViewAnhhoso" src="data/Anhhoso/khunganh.png" style="height:150;width:115"></td></tr><tr height="32">
                     <td>1. Họ, chữ đệm và tên: </td>
-                    <td colspan="2"><input type="text" name="name" size="30"  style="height:28;width:100%;font-size: 12pt"></td>
+                    <td colspan="2"><input type="text" name="name" size="30" value="{{$hoso->name}}"  style="height:28;width:100%;font-size: 12pt"></td>
                     <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2. Giới tính: </td><td>Nam <input type="radio" name="gender" value="0" checked=""> Nữ<input type="radio" name="Gioitinh" value="1"></td>
                     
                     <td></td></tr><tr height="32">
                     <td>3. Ngày sinh:</td>
-                    <td><input type="Date" name="birthday" value="" title="Chọn ngày trong bảng. Nếu không được hỗ trợ chọn thì nhập : yyyy-mm-dd" placeholder="yyyy-mm-dd"></td>
+                    <td><input type="Date" name="birthday" value="{{$hoso->name}}" title="Chọn ngày trong bảng. Nếu không được hỗ trợ chọn thì nhập : yyyy-mm-dd" placeholder="yyyy-mm-dd"></td>
                     <td>       4. Nơi sinh:</td>
-                    <td><input type="text" name="place_of_birth" value=""></td>
+                    <td><input type="text" name="place_of_birth" value="{{$hoso->place_of_birth}}"></td>
                     <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5. Dân tộc:</td>
                     <td><select size="1" name="nation_type" style="height:27px;font-size:12pt">;<option value="0"> -Chọn dân tộc- </option><option value="1">Kinh </option><option value="2">Tày </option><option value="3">Thái </option><option value="4">Hoa </option><option value="5">Khơ-me </option><option value="6">Mường </option><option value="7">Nùng </option><option value="8">HMông </option><option value="9">Dao </option><option value="10">Gia-rai </option><option value="11">Ngái </option><option value="12">Ê-đê </option><option value="13">Ba na </option><option value="14">Xơ-Đăng </option><option value="15">Sán Chay </option><option value="16">Cơ-ho </option><option value="17">Chăm </option><option value="18">Sán Dìu </option><option value="19">Hrê </option><option value="20">Mnông </option><option value="21">Ra-glai </option><option value="22">Xtiêng </option><option value="23">Bru-Vân Kiều </option><option value="24">Thổ </option><option value="25">Giáy </option><option value="26">Cơ-tu </option><option value="27">Gié Triêng </option><option value="28">Mạ </option><option value="29">Khơ-mú </option><option value="30">Co </option><option value="31">Tà-ôi </option><option value="32">Chơ-ro </option><option value="33">Kháng </option><option value="34">Xinh-mun </option><option value="35">Hà Nhì </option><option value="36">Chu ru </option><option value="37">Lào </option><option value="38">La Chí </option><option value="39">La Ha </option><option value="40">Phù Lá </option><option value="41">La Hủ </option><option value="42">Lự </option><option value="43">Lô Lô </option><option value="44">Chứt </option><option value="45">Mảng </option><option value="46">Pà Thẻn </option><option value="47">Co Lao </option><option value="48">Cống </option><option value="49">Bố Y </option><option value="50">Si La </option><option value="51">Pu Péo </option><option value="52">Brâu </option><option value="53">Ơ Đu </option><option value="54">Rơ măm </option></select></td>
                     
                     </tr><tr height="32">
                     <td>6. Số CMND/CCCD</td>
-                    <td><input type="text" name="cmnd" size="15" value="" onchange="cet_SCMNNvalid();"></td>
+                    <td><input type="text" name="cmnd" size="15" value="{{$hoso->cmnd}}" onchange="cet_SCMNNvalid();"></td>
                     <td>       7. Ngày cấp:</td>
                     <td><input type="Date" name="date_create_cmnd" value="" title="Chọn ngày trong bảng. Nếu không được hỗ trợ chọn thì nhập : yyyy-mm-dd" placeholder="yyyy-mm-dd"></td>
                     <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8. Nơi cấp:</td>
-                    <td><input type="text" name="place_create_cmnd" size="15" value=""></td>
+                    <td><input type="text" name="place_create_cmnd" size="15" value="{{$hoso->place_create_cmnd}}"></td>
                     
                     </tr><tr height="32">
                     <td colspan="5">9. Hộ khẩu thường trú:  &nbsp;Tỉnh/Tp:&nbsp;<select size="1" id="TinhTT" name="hk_tinh" style="font-size:11pt;height:27px;" onchange="bindingHuyen('TinhTT','HuyenTT',' ');"><option value="0"> -Chọn Tỉnh/Tp- </option><option value="01">Thành phố Hà Nội </option><option value="02">Thành phố Hồ Chí Minh </option><option value="03">Thành phố Hải Phòng </option><option value="04">Thành phố Đà Nẵng </option><option value="05">Tỉnh Hà Giang </option><option value="06">Tỉnh Cao Bằng </option><option value="07">Tỉnh Lai Châu </option><option value="08">Tỉnh Lào Cai </option><option value="09">Tỉnh Tuyên Quang </option><option value="10">Tỉnh Lạng Sơn </option><option value="11">Tỉnh Bắc Kạn </option><option value="12">Tỉnh Thái Nguyên </option><option value="13">Tỉnh Yên Bái </option><option value="14">Tỉnh Sơn La </option><option value="15">Tỉnh Phú Thọ </option><option value="16">Tỉnh Vĩnh Phúc </option><option value="17">Tỉnh Quảng Ninh </option><option value="18">Tỉnh Bắc Giang </option><option value="19">Tỉnh Bắc Ninh </option><option value="21">Tỉnh Hải Dương </option><option value="22">Tỉnh Hưng Yên </option><option value="23">Tỉnh Hòa Bình </option><option value="24">Tỉnh Hà Nam </option><option value="25">Tỉnh Nam Định </option><option value="26">Tỉnh Thái Bình </option><option value="27">Tỉnh Ninh Bình </option><option value="28">Tỉnh Thanh Hóa </option><option value="29">Tỉnh Nghệ An </option><option value="30">Tỉnh Hà Tĩnh </option><option value="31">Tỉnh Quảng Bình </option><option value="32">Tỉnh Quảng Trị </option><option value="33">Tỉnh Thừa Thiên -Huế </option><option value="34">Tỉnh Quảng Nam </option><option value="35">Tỉnh Quảng Ngãi </option><option value="36">Tỉnh Kon Tum </option><option value="37">Tỉnh Bình Định </option><option value="38">Tỉnh Gia Lai </option><option value="39">Tỉnh Phú Yên </option><option value="40">Tỉnh Đắk Lắk </option><option value="41">Tỉnh Khánh Hòa </option><option value="42">Tỉnh Lâm Đồng </option><option value="43">Tỉnh Bình Phước </option><option value="44">Tỉnh Bình Dương </option><option value="45">Tỉnh Ninh Thuận </option><option value="46">Tỉnh Tây Ninh </option><option value="47">Tỉnh Bình Thuận </option><option value="48">Tỉnh Đồng Nai </option><option value="49">Tỉnh Long An </option><option value="50">Tỉnh Đồng Tháp </option><option value="51">Tỉnh An Giang </option><option value="52">Tỉnh Bà Rịa-Vũng Tàu </option><option value="53">Tỉnh Tiền Giang </option><option value="54">Tỉnh Kiên Giang </option><option value="55">Thành Phố Cần Thơ </option><option value="56">Tỉnh Bến Tre </option><option value="57">Tỉnh Vĩnh Long </option><option value="58">Tỉnh Trà Vinh </option><option value="59">Tỉnh Sóc Trăng </option><option value="60">Tỉnh Bạc Liêu </option><option value="61">Tỉnh Cà Mau </option><option value="62">Tỉnh Điện Biên </option><option value="63">Tỉnh Đăk Nông </option><option value="64">Tỉnh Hậu Giang </option></select> &nbsp; Huyện/Quận/Thị xã: &nbsp;
@@ -50,12 +50,12 @@
                     
                     </tr><tr height="32">
                     <td colspan="2">13. Gửi thông báo qua đường bưu điện cho :</td>
-                    <td colspan="4"><input type="text" name="sent_notice_to_person" value="" style="height:28;width:100%;font-size: 12pt"></td>
+                    <td colspan="4"><input type="text" name="sent_notice_to_person" value="{{$hoso->sent_notice_to_person}}" style="height:28;width:100%;font-size: 12pt"></td>
                     
                     
                     </tr><tr height="32">
                     <td>14. Địa chỉ:</td>
-                    <td colspan="5"><input type="text" name="sent_notice_to_address" value="" size="15" style="height:28;width:100%;font-size: 12pt"></td>
+                    <td colspan="5"><input type="text" name="sent_notice_to_address" value="{{$hoso->sent_notice_to_address}}" size="15" style="height:28;width:100%;font-size: 12pt"></td>
                     
                     
                     </tr></tbody></table></fieldset></div><br><div><fieldset class="styleset">	<legend><b>C. THÔNG TIN PHỤC VỤ THI ĐGNL</b></legend><table width="100%" border="0" cellpadding="0" cellspacing="0" style="font-family: Times New Roman; font-size: 12pt"><tbody><tr><td width="17%"></td><td width="14%"></td><td width="13%"></td><td width="13%"></td><td width="11%"></td><td></td></tr><tr height="32">
@@ -78,21 +78,21 @@
                     <td> Trường THPT: </td><td colspan="1"><select size="1" id="Truonglop12" name="lop12_truong" style="height:27px;font-size:12pt">;<option value="0"> -Chọn trường- </option></select></td>
                     </tr></tbody></table>18. Trung bình chung học tập:<table width="100%" border="1" cellpadding="0" cellspacing="0" style="font-family: Times New Roman; font-size: 12pt"><tbody><tr height="32">
                     <td width="33%" align="center" "=""><b>Lớp 10</b> </td><td cwidth="33%" align="center" "=""><b>Lớp 11</b> </td><td align="center"><b>Lớp 12 </b></td></tr><tr><td><table><tbody><tr><td align="center">HK I</td><td align="center">HK II </td><td align="center"> Cả năm</td></tr><tr>
-                    <td align="center"><input type="text" name="lop10_diemki1" value="" style="text-align: center;height:28;width:80%;font-size: 12p" onchange="JavaScript:checkdiem(L10HK1,L10HK2,L10CN,1);"></td>
-                    <td align="center"><input type="text" name="lop10_diemki2" value="" style="text-align: center;height:28;width:80%;font-size: 12pt" onchange="JavaScript:checkdiem(L10HK2,L10HK1,L10CN,2);"> </td>
-                    <td align="center"><input type="text" name="lop10_diemtong" value="" style="text-align: center;height:28;width:80%;font-size: 12pt" onchange="JavaScript:checkdiem(L10CN);" readonly="readonly"></td>
+                    <td align="center"><input type="text" name="lop10_diemki1" value="{{$hoso->lop10_diemki1}}" style="text-align: center;height:28;width:80%;font-size: 12p" onchange="JavaScript:checkdiem(L10HK1,L10HK2,L10CN,1);"></td>
+                    <td align="center"><input type="text" name="lop10_diemki2" value="{{$hoso->lop10_diemki2}}" style="text-align: center;height:28;width:80%;font-size: 12pt" onchange="JavaScript:checkdiem(L10HK2,L10HK1,L10CN,2);"> </td>
+                    <td align="center"><input type="text" name="lop10_diemtong" value="{{$hoso->lop10_diemtong}}" style="text-align: center;height:28;width:80%;font-size: 12pt" onchange="JavaScript:checkdiem(L10CN);" readonly="readonly"></td>
                     </tr></tbody></table></td><td><table><tbody><tr>			
                     <td align="center">HK I</td><td align="center">HK II </td><td align="center"> Cả năm</td></tr><tr>		
-                    <td align="center"><input type="text" name="lop11_diemki1" value="" style="text-align: center;height:28;width:80%;font-size: 12pt" onchange="JavaScript:checkdiem(L11HK1,L11HK2,L11CN,1);"></td>
-                    <td align="center"><input type="text" name="lop11_diemki2" value="" style="text-align: center;height:28;width:80%;font-size: 12pt" onchange="JavaScript:checkdiem(L11HK2,L11HK1,L11CN,2);"> </td>
-                    <td align="center"><input type="text" name="lop11_diemtong" value="" style="text-align: center;height:28;width:80%;font-size: 12pt" onchange="JavaScript:checkdiem(L11CN);" readonly="readonly"></td>
+                    <td align="center"><input type="text" name="lop11_diemki1" value="{{$hoso->lop11_diemki1}}" style="text-align: center;height:28;width:80%;font-size: 12pt" onchange="JavaScript:checkdiem(L11HK1,L11HK2,L11CN,1);"></td>
+                    <td align="center"><input type="text" name="lop11_diemki2" value="{{$hoso->lop11_diemki2}}" style="text-align: center;height:28;width:80%;font-size: 12pt" onchange="JavaScript:checkdiem(L11HK2,L11HK1,L11CN,2);"> </td>
+                    <td align="center"><input type="text" name="lop11_diemtong" value="{{$hoso->lop11_diemtong}}" style="text-align: center;height:28;width:80%;font-size: 12pt" onchange="JavaScript:checkdiem(L11CN);" readonly="readonly"></td>
                     </tr></tbody></table></td><td><table><tbody><tr>			
                     <td align="center">HK I</td><td align="center">HK II (*) </td><td align="center"> Cả năm (*)</td></tr><tr>			
-                    <td align="center"><input type="text" name="lop12_diemki1" value="" style="text-align: center;height:28;width:80%;font-size: 12pt" onchange="JavaScript:checkdiem(L12HK1,L12HK2,L12CN,1);"></td>
-                    <td align="center"><input type="text" name="lop12_diemki2" value="" style="text-align: center;height:28;width:80%;font-size: 12pt" onchange="JavaScript:checkdiem(L12HK2,L12HK1,L12CN,2);"> </td>
-                    <td align="center"><input type="text" name="lop12_diemtong" value="" style="text-align: center;height:28;width:80%;font-size: 12pt" onchange="JavaScript:checkdiem(L12CN);" readonly="readonly"></td>
+                    <td align="center"><input type="text" name="lop12_diemki1" value="{{$hoso->lop12_diemki1}}" style="text-align: center;height:28;width:80%;font-size: 12pt" onchange="JavaScript:checkdiem(L12HK1,L12HK2,L12CN,1);"></td>
+                    <td align="center"><input type="text" name="lop12_diemki2" value="{{$hoso->lop12_diemki2}}" style="text-align: center;height:28;width:80%;font-size: 12pt" onchange="JavaScript:checkdiem(L12HK2,L12HK1,L12CN,2);"> </td>
+                    <td align="center"><input type="text" name="lop12_diemtong" value="{{$hoso->lop12_diemtong}}" style="text-align: center;height:28;width:80%;font-size: 12pt" onchange="JavaScript:checkdiem(L12CN);" readonly="readonly"></td>
                     </tr></tbody></table></td></tr></tbody></table></fieldset></div><br><div><fieldset class="styleset">	<legend><b>D. THÔNG TIN TỐT NGHIỆP</b></legend><table width="100%" border="0" cellpadding="0" cellspacing="0" style="font-family: Times New Roman; font-size: 12pt"><tbody><tr><td width="10%"></td><td width="11%"></td><td width="11%"></td><td width="11%"></td>
-                    <td width="11%"></td><td width="11%"></td><td width="11%"></td><td width="11%"></td><td></td></tr><tr height="32"><td colspan="9">19. Năm tốt nghiệp THPT (*): <input type="text" name="nam_totnghiep" value="" style="height:28;width:10%;font-size: 12pt"></td></tr><tr height="32"><td colspan="9">20. Kết quả tốt nghiệp THPT (*)</td></tr><tr height="32">
+                    <td width="11%"></td><td width="11%"></td><td width="11%"></td><td width="11%"></td><td></td></tr><tr height="32"><td colspan="9">19. Năm tốt nghiệp THPT (*): <input type="text" name="nam_totnghiep" value="{{$hoso->nam_totnghiep}}" style="height:28;width:10%;font-size: 12pt"></td></tr><tr height="32"><td colspan="9">20. Kết quả tốt nghiệp THPT (*)</td></tr><tr height="32">
             <td align="center"><b>Toán</b></td>
             <td align="center"><b>Văn</b></td>
             <td align="center"><b>Ngoại ngữ</b></td>
@@ -102,17 +102,17 @@
             <td align="center"><b>Sử</b></td>
             <td align="center"><b>Địa</b></td>
             <td align="center"><b>GDCD</b></td></tr><tr>
-                    <td align="center"><input type="text" name="dToan" value="" style="text-align: center;height:28;width:80%;font-size: 12p" onchange="JavaScript:checkdiem(dToan);"></td>
-                    <td align="center"><input type="text" name="dVan" value="" style="text-align: center;height:28;width:80%;font-size: 12pt" onchange="JavaScript:checkdiem(dVan);"> </td>
-                    <td align="center"><input type="text" name="dNgoaiNgu" value="" style="text-align: center;height:28;width:80%;font-size: 12pt" onchange="JavaScript:checkdiem(dNgoaingu);"></td>
+                    <td align="center"><input type="text" name="dToan" value="{{$hoso->dToan}}" style="text-align: center;height:28;width:80%;font-size: 12p" onchange="JavaScript:checkdiem(dToan);"></td>
+                    <td align="center"><input type="text" name="dVan" value="{{$hoso->dVan}}" style="text-align: center;height:28;width:80%;font-size: 12pt" onchange="JavaScript:checkdiem(dVan);"> </td>
+                    <td align="center"><input type="text" name="dNgoaiNgu" value="{{$hoso->dNgoaiNgu}}" style="text-align: center;height:28;width:80%;font-size: 12pt" onchange="JavaScript:checkdiem(dNgoaingu);"></td>
                     
-                    <td align="center"><input type="text" name="dLy" value="" style="text-align: center;height:28;width:80%;font-size: 12pt" onchange="JavaScript:checkdiem(dLy);"></td>
-                    <td align="center"><input type="text" name="dHoa" value="" style="text-align: center;height:28;width:80%;font-size: 12pt" onchange="JavaScript:checkdiem(dHoa);"> </td>
-                    <td align="center"><input type="text" name="dSinh" value="" style="text-align: center;height:28;width:80%;font-size: 12pt" onchange="JavaScript:checkdiem(dSinh);"></td>
+                    <td align="center"><input type="text" name="dLy" value="{{$hoso->dLy}}" style="text-align: center;height:28;width:80%;font-size: 12pt" onchange="JavaScript:checkdiem(dLy);"></td>
+                    <td align="center"><input type="text" name="dHoa" value="{{$hoso->dHoa}}" style="text-align: center;height:28;width:80%;font-size: 12pt" onchange="JavaScript:checkdiem(dHoa);"> </td>
+                    <td align="center"><input type="text" name="dSinh" value="{{$hoso->dSinh}}" style="text-align: center;height:28;width:80%;font-size: 12pt" onchange="JavaScript:checkdiem(dSinh);"></td>
                     
-                    <td align="center"><input type="text" name="dSu" value="" style="text-align: center;height:28;width:80%;font-size: 12pt" onchange="JavaScript:checkdiem(dSu);"></td>
-                    <td align="center"><input type="text" name="dDia" value="" style="text-align: center;height:28;width:80%;font-size: 12pt" onchange="JavaScript:checkdiem(dDia);"> </td>
-                    <td align="center"><input type="text" name="dGdcd" value="" style="text-align: center;height:28;width:80%;font-size: 12pt" onchange="JavaScript:checkdiem(dGDCD);"></td>
+                    <td align="center"><input type="text" name="dSu" value="{{$hoso->dSu}}" style="text-align: center;height:28;width:80%;font-size: 12pt" onchange="JavaScript:checkdiem(dSu);"></td>
+                    <td align="center"><input type="text" name="dDia" value="{{$hoso->dDia}}" style="text-align: center;height:28;width:80%;font-size: 12pt" onchange="JavaScript:checkdiem(dDia);"> </td>
+                    <td align="center"><input type="text" name="dGdcd" value="{{$hoso->dGdcd}}" style="text-align: center;height:28;width:80%;font-size: 12pt" onchange="JavaScript:checkdiem(dGDCD);"></td>
         
             </tr></tbody></table></fieldset></div><br><table border="0"><tbody><tr><td width="40%"><div class="g-recaptcha" style="width: 100%;overflow: auto;" data-sitekey="6LebB44aAAAAAOwp4Oi_yXI0ZIP-wHg6odoJ2Sia"><div style="width: 304px; height: 78px;"><div><iframe title="reCAPTCHA" src="https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6LebB44aAAAAAOwp4Oi_yXI0ZIP-wHg6odoJ2Sia&amp;co=aHR0cHM6Ly9raGFvdGhpLnZudS5lZHUudm46NDQz&amp;hl=vi&amp;v=eWmgPeIYKJsH2R2FrgakEIkq&amp;size=normal&amp;cb=8atgr2d3dn4z" width="304" height="78" role="presentation" name="a-avthbtjr7a4y" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox"></iframe></div><textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea></div><iframe style="display: none;"></iframe></div> </td><td width="46%" align="center">
                 <button type="submit">

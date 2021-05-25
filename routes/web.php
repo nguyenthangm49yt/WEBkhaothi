@@ -26,5 +26,8 @@ Route::get('/logout', [loginController::class,'logout'])->name('auth.logout');
 
 Route::get('/Khaothi/Hoso', [HosoController::class,'show'])->name('hoso.show');
 Route::post('/Khaothi/Hoso', [HosoController::class,'store'])->name('hoso.store');
+Route::get('/Khaothi/capNhatHS', [HosoController::class,'updateshow'])->name('hoso.updateshow');
+Route::post('/Khaothi/capNhatHS', [HosoController::class,'updatestore'])->name('hoso.updatestore');
+
 
 

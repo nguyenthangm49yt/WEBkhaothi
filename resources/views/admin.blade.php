@@ -1,5 +1,11 @@
 <!DOCTYPE html>
 
+<<<<<<< HEAD
+=======
+
+<!-- edit by khanhvv2 -->
+<!-- edit by khanhv32 -->
+>>>>>>> khanh
 <html>
     <head>
         <title>Đăng Ki</title>

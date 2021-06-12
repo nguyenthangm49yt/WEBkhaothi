@@ -149,6 +149,6 @@ class HosoController extends Controller
         DB::table('hoso')
         ->where('email', $hoso->email)
         ->update(['name' => $request->name]);
-        return redirect()->route('hoso.updateshow')->with('alert','Cap nhat thanh cong');;
+        return redirect()->route('hoso.updateshow')->with('alert','Cap nhat thanh cong');
     }
 }

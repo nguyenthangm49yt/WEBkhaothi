@@ -10,6 +10,6 @@ class Cathi extends Model
     use HasFactory;
     protected $table ='cathi';
     public function users() {
-        return $this->belongsToMany('App\Models\User', 'users_cathi', 'id_cathi', 'id_user');
+        return $this->belongsToMany('App\Models\Dotthi', 'dotthi_cathi', 'id_cathi', 'id_dotthi');
       }
 }

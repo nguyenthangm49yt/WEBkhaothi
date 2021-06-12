@@ -43,9 +43,14 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function cathi()
-{
-    return $this->belongstoMany('App\Models\Cathi', 'users_cathi', 'id', 'id_cathi');
-}
+    public function phone()
+    {
+        return $this->hasOne('App\Hoso', 'id_user', 'id');
+    }
+
+        public function hosoduthi()
+    {
+        return $this->hasMany('App\Models\Hosoduthi', 'id_user', 'id');
+    }
     
 }

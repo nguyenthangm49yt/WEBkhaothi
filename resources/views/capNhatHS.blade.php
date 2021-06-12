@@ -115,15 +115,95 @@
                     <td align="center"><input type="text" name="dGdcd" value="{{$hoso->dGdcd}}" style="text-align: center;height:28;width:80%;font-size: 12pt" onchange="JavaScript:checkdiem(dGDCD);"></td>
         
             </tr></tbody></table></fieldset></div><br><table border="0"><tbody><tr><td width="40%"><div class="g-recaptcha" style="width: 100%;overflow: auto;" data-sitekey="6LebB44aAAAAAOwp4Oi_yXI0ZIP-wHg6odoJ2Sia"><div style="width: 304px; height: 78px;"><div><iframe title="reCAPTCHA" src="https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6LebB44aAAAAAOwp4Oi_yXI0ZIP-wHg6odoJ2Sia&amp;co=aHR0cHM6Ly9raGFvdGhpLnZudS5lZHUudm46NDQz&amp;hl=vi&amp;v=eWmgPeIYKJsH2R2FrgakEIkq&amp;size=normal&amp;cb=8atgr2d3dn4z" width="304" height="78" role="presentation" name="a-avthbtjr7a4y" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox"></iframe></div><textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea></div><iframe style="display: none;"></iframe></div> </td><td width="46%" align="center">
+               
+                <select name="calc_shipping_provinces" required="">
+  <option value="">Tỉnh / Thành phố</option>
+</select>
+<select name="calc_shipping_district" required="">
+  <option value="">Quận / Huyện</option>
+</select>
+<input class="billing_address_1" name="" type="hidden" value="">
+<input class="billing_address_2" name="" type="hidden" value="">
                 <button type="submit">
                             Ghi nhận
                         </button>
-            <input name="Send" type="hidden" value=""><a href="#" class="button" ;font-size:="" 12pt;font-weight:bold;"="">Quay lại</a>&nbsp;<a href="#" class="button">Đăng ký đợt thi</a></td></tr></tbody></table></form>
+            <input name="Send" type="hidden" value=""><a href="{{route('home')}}" class="button" ;font-size:="" 12pt;font-weight:bold;"="">Quay lại</a>&nbsp;<a href="#" class="button">Đăng ký đợt thi</a></td></tr></tbody></table></form>
          
         <div id="lbdictex_find_popup" class="lbexpopup hidden" style="position: absolute; top: 0px; left: 0px;"><div class="lbexpopup_top"><h2 class="fl popup_title">&nbsp;</h2><ul><li><a class="close_main popup_close" href="#">&nbsp;</a></li></ul><div class="clr"></div></div><div class="popup_details"></div><div class="popup_powered">abc</div></div><div id="lbdictex_ask_mark" class="hidden" style="position: absolute; top: 0px; left: 0px;"><a class="lbdictex_ask_select" href="#">&nbsp;</a></div><div style="background-color: rgb(255, 255, 255); border: 1px solid rgb(204, 204, 204); box-shadow: rgba(0, 0, 0, 0.2) 2px 2px 3px; position: absolute; transition: visibility 0s linear 0.3s, opacity 0.3s linear 0s; opacity: 0; visibility: hidden; z-index: 2000000000; left: 0px; top: -10000px;"><div style="width: 100%; height: 100%; position: fixed; top: 0px; left: 0px; z-index: 2000000000; background-color: rgb(255, 255, 255); opacity: 0.05;"></div><div class="g-recaptcha-bubble-arrow" style="border: 11px solid transparent; width: 0px; height: 0px; position: absolute; pointer-events: none; margin-top: -11px; z-index: 2000000000;"></div><div class="g-recaptcha-bubble-arrow" style="border: 10px solid transparent; width: 0px; height: 0px; position: absolute; pointer-events: none; margin-top: -10px; z-index: 2000000000;"></div><div style="z-index: 2000000000; position: relative;"><iframe title="thử thách xác thực recaptcha" src="https://www.google.com/recaptcha/api2/bframe?hl=vi&amp;v=eWmgPeIYKJsH2R2FrgakEIkq&amp;k=6LebB44aAAAAAOwp4Oi_yXI0ZIP-wHg6odoJ2Sia&amp;cb=jpuqctpj3d68" name="c-avthbtjr7a4y" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox" style="width: 100%; height: 100%;"></iframe></div></div></body>, initial-scale=1.0">
     <title>Document</title>
 
-
+ 
+<script src='https://cdn.jsdelivr.net/gh/vietblogdao/js/districts.min.js'/>
+<script>//<![CDATA[
+if (address_2 = localStorage.getItem('address_2_saved')) {
+  $('select[name="calc_shipping_district"] option').each(function() {
+    if ($(this).text() == address_2) {
+      $(this).attr('selected', '')
+    }
+  })
+  $('input.billing_address_2').attr('value', address_2)
+}
+if (district = localStorage.getItem('district')) {
+  $('select[name="calc_shipping_district"]').html(district)
+  $('select[name="calc_shipping_district"]').on('change', function() {
+    var target = $(this).children('option:selected')
+    target.attr('selected', '')
+    $('select[name="calc_shipping_district"] option').not(target).removeAttr('selected')
+    address_2 = target.text()
+    $('input.billing_address_2').attr('value', address_2)
+    district = $('select[name="calc_shipping_district"]').html()
+    localStorage.setItem('district', district)
+    localStorage.setItem('address_2_saved', address_2)
+  })
+}
+$('select[name="calc_shipping_provinces"]').each(function() {
+  var $this = $(this),
+    stc = ''
+  c.forEach(function(i, e) {
+    e += +1
+    stc += '<option value=' + e + '>' + i + '</option>'
+    $this.html('<option value="">Tỉnh / Thành phố</option>' + stc)
+    if (address_1 = localStorage.getItem('address_1_saved')) {
+      $('select[name="calc_shipping_provinces"] option').each(function() {
+        if ($(this).text() == address_1) {
+          $(this).attr('selected', '')
+        }
+      })
+      $('input.billing_address_1').attr('value', address_1)
+    }
+    $this.on('change', function(i) {
+      i = $this.children('option:selected').index() - 1
+      var str = '',
+        r = $this.val()
+      if (r != '') {
+        arr[i].forEach(function(el) {
+          str += '<option value="' + el + '">' + el + '</option>'
+          $('select[name="calc_shipping_district"]').html('<option value="">Quận / Huyện</option>' + str)
+        })
+        var address_1 = $this.children('option:selected').text()
+        var district = $('select[name="calc_shipping_district"]').html()
+        localStorage.setItem('address_1_saved', address_1)
+        localStorage.setItem('district', district)
+        $('select[name="calc_shipping_district"]').on('change', function() {
+          var target = $(this).children('option:selected')
+          target.attr('selected', '')
+          $('select[name="calc_shipping_district"] option').not(target).removeAttr('selected')
+          var address_2 = target.text()
+          $('input.billing_address_2').attr('value', address_2)
+          district = $('select[name="calc_shipping_district"]').html()
+          localStorage.setItem('district', district)
+          localStorage.setItem('address_2_saved', address_2)
+        })
+      } else {
+        $('select[name="calc_shipping_district"]').html('<option value="">Quận / Huyện</option>')
+        district = $('select[name="calc_shipping_district"]').html()
+        localStorage.setItem('district', district)
+        localStorage.removeItem('address_1_saved', address_1)
+      }
+    })
+  })
+})
+//]]></script>
     
 </body>
 </html>

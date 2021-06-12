@@ -13,4 +13,14 @@ class Dotthi extends Model
     {
     	return $this->hasMany('App\Models\Cathi', 'id_dotthi','id');
     }
+
+    public function baithi()
+    {
+    	return $this->hasMany('App\Models\Baithi', 'id_dotthi','id');
+    }
+    
+    public function diemthi()
+    {
+    	return $this->hasMany('App\Models\Diemthi', 'id_dotthi','id');
+    }
 }

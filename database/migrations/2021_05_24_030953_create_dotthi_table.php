@@ -14,9 +14,10 @@ class CreateDotthiTable extends Migration
     public function up()
     {
         Schema::create('dotthi', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
+            $table->string('ma');
             $table->string('name');
-            $table->string('ma_dot_thi');
+           
             $table->date('ngay_bat_dau');
             $table->date('ngay_ket_thuc');
             $table->date('han_dang_ki');

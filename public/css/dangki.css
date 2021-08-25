@@ -1,72 +1,118 @@
-*{
+* {
     padding: 0px;
     margin: 0px;
     font-family: sans-serif;
     box-sizing: border-box;
 }
-.container{
-    width: 100%;
-    width: 1300px;
-    margin-left: auto;
-    margin-right: auto;
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
 }
-.container .logo{
+.container__left {
+    width: 70%;
+}
+
+.container__right {
+    width: 30%;
+}
+.container__left .logo {
     position: absolute;
     display: inline-block;
-    margin-top: 100px;
-    margin-left: 100px;
+    top: 0px;
+    margin-top: 30px;
+    margin-left: 30px;
 }
-.container img{
-    display: inline-block;
+
+.container__left .logo img {
+    height: 100px;
+    width: 100px;
 }
-.dangki-form{
-    margin-left: 280px;
-    display: inline-block;
-    width: 100%;
-    max-width: 400px;
+.dangki-form {
+    margin: 20px;
+    margin-right: 40px;
     background-color: #ffffff;
     padding: 15px;
-    border: 2px dotted #cccccc;
+    border: 2px solid #cccccc;
     border-radius: 10px;
+    box-shadow: 0 0 7px -4px;
 }
-.container li{
+.container__left li {
     position: absolute;
     color: rgb(196 28 33);
     text-transform: uppercase;
     font-weight: bold;
     text-decoration: none;
-    padding-top: 280px;
-    padding-left: 80px;
+    top: 0px;
+    padding-top: 140px;
+    padding-left: 10px;
+    list-style: none;
+    font-size: 22px;
 }
-h1{
-    color: #009999;
-    font-size: 20px;
+.header-title {
+    text-transform: uppercase;
+    color: rgb(196 28 33);
+    font-size: 22px;
+    font-weight: bold;
     margin-bottom: 30px;
+    text-align: center;
 }
-.input-box{
-    margin-bottom: 10px;
+
+.input-box {
+    border-radius: 90px;
+    margin-bottom: 30px;
+    border-top: none;
+    box-shadow: 0px 2px 2px #196c45, 0px 4px 5px #196c45;
 }
-.input-box input{
-    padding: 7.5px 15px;
+.input-box input {
+    border-radius: 90px;
+    padding: 16px;
+    font-size: 16px;
+    line-height: 16px;
     width: 100%;
-    border: 1px solid #cccccc;
+    border: none;
+
     outline: none;
 }
-.btn-box{
-    text-align: right;
+.btn-box {
+    text-align: center;
     margin-top: 30px;
+    border-radius: 99px;
 }
-.btn-box button{
+.btn-box button {
+    border-radius: 99px;
+    width: 100%;
+    height: 48px;
     padding: 7.5px 15px;
-    border-radius: 2px;
-    background-color: #009999;
+    font-size: 16px;
+    background-color: #2aa12b;
     color: #ffffff;
     border: none;
     outline: none;
 }
-.container .dangki-form .tick-box label{
+.btn-box button:hover{
+    cursor: pointer;
+}
+.container__right .dangki-form .tick-box label {
     color: #444444;
     font-size: 15px;
     line-height: 30px;
     margin-left: 10px;
+}
+.mes_logs{
+    position: absolute;
+    margin-top: 6px;
+    color: red;
+}
+
+.message-header_log{
+    position: absolute;
+    font-size: 20px;
+    text-align: center;
+    width: 100%;
+    background-color: #FF9966;
+    z-index: 999;
 }

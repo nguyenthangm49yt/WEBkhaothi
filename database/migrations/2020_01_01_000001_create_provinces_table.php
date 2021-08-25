@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCathiTable extends Migration
+class CreateProvincesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class CreateCathiTable extends Migration
      */
     public function up()
     {
-        Schema::create('cathi', function (Blueprint $table) {
-            $table->increments('id');
-            $table->date('ngay');
-            $table->string('gio');
-           // $table->string('id_dotthi');
+        Schema::create(config('vietnam-zone.tables.provinces'), function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('name');
+            $table->string('gso_id');
             $table->timestamps();
         });
     }
@@ -29,6 +28,6 @@ class CreateCathiTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cathi');
+        Schema::dropIfExists(config('vietnam-zone.tables.provinces'));
     }
 }

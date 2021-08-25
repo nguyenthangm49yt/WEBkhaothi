@@ -1,0 +1,195 @@
+body {
+    background-color: #9cdbe2;
+}
+body .thongtin {
+    font-size: 30px;
+    background-color: #00ccff;
+    color: #0000ff;
+}
+.dangki table {
+    margin-top: 10px;
+    display: inline-block;
+    border-top: 2px solid#9A9A9A;
+}
+.bang {
+    width: 100%;
+    height: 271px;
+    overflow-x: scroll;
+    overflow-y: scroll;
+    border-style: solid;
+    border-width: 1px;
+    padding-left: 1px;
+    padding-right: 1px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+.bang .table,
+th,
+td {
+    color: black;
+    border-collapse: collapse;
+}
+.bang .table {
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px solid black;
+}
+.bang .th,
+td {
+    text-align: left;
+    padding: 10px;
+}
+.t-bang tr td:not(:nth-child(3)) {
+    text-align: center;
+    padding: 10px;
+}
+.bang .tr:hover {
+    background-color: #ddd;
+    cursor: pointer;
+}
+.thongtinthi {
+    margin-top: 100px;
+}
+.xacnhan {
+    margin-top: 30px;
+}
+.button0 {
+    background-color: #3498db;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+}
+.button1 {
+    background-color: #c0c0c0;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+}
+.button0:hover {
+    color: #ffbc01;
+    //color: white;
+}
+.button1:hover {
+    color: #ffbc01;
+    //color: white;
+}
+.noidungstt {
+    display: inline-block;
+}
+
+.t-bang tr:nth-child(even) {
+    background: #3498db;
+}
+
+.t-bang tr:nth-child(odd) {
+    background: #c0c0c0;
+}
+
+.button2 {
+    background-color: #e0f0e0;
+    border: solid;
+    border-radius: 2px;
+    border-width: thin;
+    color: black;
+    padding: 4px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.button2:hover {
+    background-color: #189609;
+    border: solid #c0c0c0;
+    color: #c0c0c0;
+}
+
+.dd-thi {
+    width: 100%;
+    height: 350px;
+    overflow-x: scroll;
+    overflow-y: scroll;
+    border-style: solid;
+    border-width: 1px;
+    padding-left: 1px;
+    padding-right: 1px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    margin-top: 30px;
+}
+
+ul {
+    list-style-type: none;
+}
+.ulbaithi {
+    float: left;
+    padding-left: 0;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.ulbaithidetail {
+    width: calc(100% - 65px);
+    padding: 7px 0;
+    margin: 1px;
+    margin-left: 65px;
+    background-color: #fff;
+}
+
+.ulbaithidetail--focus, .ulbaithidetail:hover{
+    background-color: #bc9afb;
+    cursor: pointer;
+}
+
+.ulbaithidetail li {
+    float: left;
+    padding-right: 10px;
+    padding-bottom: 4px;
+    padding: 0;
+}
+
+.ulbaithidetail > li:nth-child(1) {
+    min-width: calc(100vw / 14);
+}
+.ulbaithidetail > li:nth-child(2) {
+    min-width: calc(100vw / 4);
+}
+.ulbaithidetail > li:nth-child(3) {
+    min-width: calc(100vw / 2);
+}
+
+#btn-submit:disabled {
+    cursor: not-allowed;
+}
+
+.ddiemthi-title {
+    background-color: #e6e6e6;
+    padding: 6px;
+}
+
+.ddiemthi td {
+    padding: 0;
+}
+
+.table-detail thead tr th,
+.table-detail tbody tr td {
+    border: none;
+}
+
+.table-detail thead tr th {
+    border: none;
+    padding: 6px;
+    background-color: #66caff;
+}
+.ul-cathi li{
+    padding-right: 25px;
+}

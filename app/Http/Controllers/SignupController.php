@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
 use App\Models\User;
+
 class SignupController extends Controller
 {
     /**
@@ -37,33 +38,36 @@ class SignupController extends Controller
     public function store(Request $request)
     {
         //
-        if($request->isMethod('post')) {
-            $validator = Validator::make($request->all(),[
+        if ($request->isMethod('post')) {
+            $validator = Validator::make($request->all(), [
                 'name'       => 'required',
                 'email'    => 'required|email',
-                'password'      => 'required'
+                'password'      => 'required',
+                'confirm_password'      => 'required|same:password',
+                'checkbox-policy'  => 'required'
             ]);
-        if($validator->fails()) {
-            return redirect()->back()
-                            ->withErrors($validator)
-                            ->withInput();
-        }
-
-        $user = DB::table('users')->where('email',$request->email)->first();
-        if(!$user){
-            $newUser = new User();
-            $newUser->name = $request->name;
-            $newUser->email = $request->email;
-            $newUser->password = bcrypt($request->password);
-            $newUser->status = $request->status;
-            $newUser->role = $request->role;
-            $newUser->save();
-            return redirect()->route('auth.show')->with('message','Bạn đã tạo tk thành công, mời đăng nhập');
 
 
-        }else{
-            return redirect()->route('login')->with('message','TK đã tồn tại, mời đăng nhập');
-        }
+            if ($validator->fails()) {
+                return redirect()->back()
+                    ->withErrors($validator)
+                    ->withInput();
+            }
+
+
+            $user = DB::table('users')->where('email', $request->email)->first();
+            if (!$user) {
+                $newUser = new User();
+                $newUser->name = $request->name;
+                $newUser->email = $request->email;
+                $newUser->password = bcrypt($request->password);
+                $newUser->status = 1;
+                $newUser->role = 0;
+                $newUser->save();
+                return redirect()->route('auth.show')->with('message', 'Bạn đã tạo tk thành công, mời đăng nhập');
+            } else {
+                return redirect()->route('login')->with('message', 'TK đã tồn tại, mời đăng nhập');
+            }
         }
     }
 

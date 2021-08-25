@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCathiTable extends Migration
+class CreatePhongTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateCathiTable extends Migration
      */
     public function up()
     {
-        Schema::create('cathi', function (Blueprint $table) {
+        Schema::create('phong', function (Blueprint $table) {
             $table->increments('id');
-            $table->date('ngay');
-            $table->string('gio');
-           // $table->string('id_dotthi');
+            $table->string('ten');
+            $table->integer('id_diemthi');
+            
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ class CreateCathiTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cathi');
+        Schema::dropIfExists('phong');
     }
 }

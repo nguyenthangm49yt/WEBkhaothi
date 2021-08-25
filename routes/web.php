@@ -52,3 +52,7 @@ Route::get('/tracuu1', [TracuuController::class,'showlist'])->name('Tracuu.showl
 Route::get('/tracuu1/{id}', [TracuuController::class,'show'])->name('Tracuu.show');
 
 
+ // load ajax districts
+Route::get('/districts/{id}',[HosoController::class,'getDistricts']);
+ 
+

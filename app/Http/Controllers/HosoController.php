@@ -55,7 +55,7 @@ class HosoController extends Controller
                 //   'lop12_tinh'   => 'required',
                 //   'lop12_huyen'   => 'required',
                 //   'lop12_truong'   => 'required',
-                // 'lop10_diemki1'   => 'required',
+                'lop10_diemki1'   => 'required|digits_between:0;10',
                 // 'lop10_diemki2'   => 'required',
                 //  'lop10_diemtong'   => 'required',
                 // 'lop11_diemki1'   => 'required',
@@ -178,6 +178,7 @@ class HosoController extends Controller
             'g-recaptcha-response' => 'required',
             'name'       => 'required',
             'email'   => 'required',
+            'lop10_diemki1'   => 'required|digits_between:0;10',
         ]);
         if ($validator->fails()) {
             return redirect()->back()

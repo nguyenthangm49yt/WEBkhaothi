@@ -13,6 +13,14 @@
 </head>
 
 <body>
+    @if(session('message'))
+    <div class="alert alert-warning alert-dismissible fade show" role="alert" style="margin-bottom: 0;">
+    {{session('message')}}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close" style="padding: 6px;">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    @endif
     <div class="page-top">
         <div class="login">
             <div class="login__left">
@@ -51,7 +59,7 @@
         <div class="menu">
 
             <ul>
-                <li class="hop_xuong"><a href="#">Trang chủ</a></li>
+                <li class="hop_xuong"><a href="{{route('home')}}">Trang chủ</a></li>
                 <li class="hop_xuong"><a href="#" class="noi_dung_xuong">Giới Thiệu</a>
                     <div class="noi_dung_con">
                         <a href="#"> Giới Thiệu</a>

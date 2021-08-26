@@ -115,6 +115,9 @@
         </td>
     </div>
 
+
+
+    <!-- javascript -->
     <script>
         function ckdotthiAll() {
             window.location.href = '{{route("dangkithi.show")}}';

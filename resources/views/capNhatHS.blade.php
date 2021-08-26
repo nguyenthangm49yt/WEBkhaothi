@@ -330,7 +330,7 @@
                                             <td align="center"> Cả năm (*)</td>
                                         </tr>
                                         <tr>
-                                            <td align="center"><input type="text" id='lop12_diemki1' name="lop12_diemki1" value="{{$hoso->lop12_diemki1}}" style="text-align: center;height:28;width:80%;font-size: 12pt" onchange="checkdiem3()"></td>
+                                            <td align="center"><input type="text"  min="1" max="10" id='lop12_diemki1' name="lop12_diemki1" value="{{$hoso->lop12_diemki1}}" style="text-align: center;height:28;width:80%;font-size: 12pt" onchange="checkdiem3()"></td>
                                             <td align="center"><input type="text" id='lop12_diemki2' name="lop12_diemki2" value="{{$hoso->lop12_diemki2}}" style="text-align: center;height:28;width:80%;font-size: 12pt" onchange="checkdiem3()"> </td>
                                             <td align="center"><input type="text" id='lop12_diemtong' name="lop12_diemtong" value="{{$hoso->lop12_diemtong}}" style="text-align: center;height:28;width:80%;font-size: 12pt" onchange="JavaScript:checkdiem(L12CN);" readonly="readonly"></td>
                                         </tr>
@@ -432,6 +432,8 @@
             }
         }
     </script>
+  
+  <!-- auto calculate totalScore -->
     <script>
         function checkdiem1() {
             var total = 0;
@@ -462,6 +464,7 @@
         }
     </script>
 
+<!-- call data of districts -->
     <script type=text/javascript>
         $('#hk_tinh').on('change', function() {
             console.log(this.value);
@@ -487,6 +490,7 @@
         });
     </script>
 
+<!-- call data of districts -->
     <script type=text/javascript>
         $('#Tinhlop10').on('change', function() {
             console.log(this.value);
@@ -512,6 +516,7 @@
         });
     </script>
 
+<!-- call data of districts -->
     <script type=text/javascript>
         $('#Tinhlop11').on('change', function() {
             console.log(this.value);
@@ -536,6 +541,8 @@
             }
         });
     </script>
+
+<!-- call data of districts -->
     <script type=text/javascript>
         $('#Tinhlop12').on('change', function() {
             console.log(this.value);
@@ -560,6 +567,8 @@
             }
         });
     </script>
+
+<!-- recaptcha -->
     <script>
         var recaptcha_response = '';
 

@@ -503,3 +503,10 @@ body {
 	cursor: pointer;
 }
 
+.alert{
+    margin-bottom: 0;
+}
+
+.close{
+	padding: 6px;
+}

@@ -1,5 +1,5 @@
 @extends('CNdangkithi')
-<title>CN Đang ki thi </title>
+<!-- <title>CN Đang ki thi </title> -->
 <link href="{{asset('/css/dangkithi.css')}}" rel="stylesheet" type="text/css" />
 
 </head>
@@ -109,7 +109,7 @@
                             @foreach($diemthis as $diemthi)
                             <tr class="ddiemthi">
                                 <td colspan="4">
-                                    <div  class="ddiemthi-title">
+                                    <div class="ddiemthi-title">
                                         @if($hosoduthi[0]->id_diemthi === $diemthi->id)
                                         <input type="radio" onclick="btndiemthiclick()" name="ckdiemthi" value="{{$diemthi->id}}" checked> {{$diemthi->ma}}
                                         @else
@@ -120,6 +120,7 @@
                                         </b>
                                         </br>
                                     </div>
+
                                     <!-- các bài thi trong điểm     -->
                                     <ul class='ulbaithi'>
 
@@ -138,13 +139,13 @@
                                                         @foreach($cathichecked as $cathi)
                                                         <li>
 
-                                                            {{$cathi->ten}}<input type="radio" name="ckcathi[{{$baithi->id}}]" value="{{$cathi->id_cathi}}" disabled {{  ($cathi->id_baithi == $baithi->id) && ($cathi->id_diemthi == $diemthi->id) ? 'checked' : '' }}>
+                                                            {{$cathi->ten}}<input type="radio" name="ckcathi[{{$baithi->id}}]" value="{{$cathi->id_cathi}}" {{($cathi->id_baithi == $baithi->id) && ($cathi->id_diemthi == $diemthi->id) ? 'checked' : '' }}>
                                                         </li>
                                                         @endforeach
                                                     </ul>
                                                 </li>
 
-                                                <li>{{$baithi->le_phi}}</li>
+                                                <li>{{$baithi->le_phi}}đ</li>
                                                 <br />
                                             </ul>
                                         </li>
@@ -160,27 +161,31 @@
                     </table>
                 </fieldset>
             </div>
+
+            <!-- return validate error -->
         </div>
         @if ($errors->has('ckdiemthi'))
-        <div>
-            {{$errors->first('ckdiemthi')}}
+        <div class="dangkithi-mes__error">
+            {{"Chưa chọn điểm thi"}}
         </div>
         @endif
         @if ($errors->has('ckbaithi'))
-        <div>
-            {{$errors->first('ckbaithi')}}
+        <div class="dangkithi-mes__error">
+            {{"Chưa chọn bài thi"}}
         </div>
         @endif
         @if ($errors->has('ckcathi'))
-        <div>
-            {{$errors->first('ckcathi')}}
+        <div class="dangkithi-mes__error">
+            {{"Chưa chọn ca thi"}}
         </div>
         @endif
 
-        <button type="submit" id="btn-submit" style="height:27px;font-size:12pt;font-weight:bold;width:120pt" class="button2">
+
+        <!-- button submit -->
+        <button class="btn-submit" type="submit" id="btn-submit" style="height:27px;font-size:12pt;font-weight:bold;width:120pt" class="button2">
             Ghi Nhận
         </button>
-
+        <br>
     </form>
 
     <!-- javascript -->

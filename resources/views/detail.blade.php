@@ -1,7 +1,7 @@
 @extends('dangkithi')
 
 <head>
-    <title>Đang ki học </title>
+    <!-- <title>Đăn kí thi </title> -->
     <link href="{{asset('/css/dangkithi.css')}}" rel="stylesheet" type="text/css" />
 
 </head>
@@ -157,18 +157,18 @@
             </div>
         </div>
         @if ($errors->has('ckdiemthi'))
-        <div>
-            {{$errors->first('ckdiemthi')}}
+        <div class="dangkithi-mes__error">
+            {{"Chưa chọn điểm thi"}}
         </div>
         @endif
         @if ($errors->has('ckbaithi'))
-        <div>
-            {{$errors->first('ckbaithi')}}
+        <div class="dangkithi-mes__error">
+            {{"Chưa chọn bài thi"}}
         </div>
         @endif
         @if ($errors->has('ckcathi'))
-        <div>
-            {{$errors->first('ckcathi')}}
+        <div class="dangkithi-mes__error">
+            {{"Chưa chọn ca thi"}}
         </div>
         @endif
 
@@ -237,9 +237,9 @@
             }
         }
     </script>
-     <script>
+    <script>
         var status = document.getElementById('Trangthaikythi').value;
-        if(status != '0'){
+        if (status != '0') {
             document.getElementById('btn-submit').disabled = true;
         }
     </script>

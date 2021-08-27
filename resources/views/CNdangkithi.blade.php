@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>dang ki thi</title>
+    <title>Cập nhật Đăng kí thi</title>
     <link href="{{asset('/css/dangkithi.css')}}" rel="stylesheet" type="text/css" />
 </head>
 
@@ -21,7 +21,7 @@
             </tr>
             <tr>
                 <td width="30%" align="right"></td>
-                <td width="30%" align="right"><i> Đăng nhập:Nguyễn Văn Nhất(nhatnguyenvan00001@gmail.com) </i></td>
+                <td width="30%" align="right"><i> Đăng nhập: {{$hoso->name}} ({{$hoso->email}} ) </i></td>
             </tr>
         </tbody>
     </table>
@@ -34,7 +34,7 @@
                     - Tất cả Đợt thi:
                     <input type="radio" name="ckLoaikythiall" value="3" onclick="ckdotthiAll()">
                 </td>
-                <td width="20%"><small><i>(Số Đợt thi:[0] - bạn chưa đăng ký đơt thi nào)</i></small>
+                <td width="20%"><small><i>(Số Đợt thi bạn đã đăng kí: {{sizeof($dotthis)}} )</i></small>
                 </td>
                 <td width="5%">Trang: </td>
                 <td width="4%"><input type="text" value="1" name="page" style="width:100%"></td>

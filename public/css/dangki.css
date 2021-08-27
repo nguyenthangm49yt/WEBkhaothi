@@ -93,7 +93,7 @@
     border: none;
     outline: none;
 }
-.btn-box button:hover{
+.btn-box button:hover {
     cursor: pointer;
 }
 .container__right .dangki-form .tick-box label {
@@ -102,17 +102,22 @@
     line-height: 30px;
     margin-left: 10px;
 }
-.mes_logs{
+.mes_logs {
     position: absolute;
     margin-top: 6px;
     color: red;
 }
 
-.message-header_log{
+.message-header_log {
     position: absolute;
     font-size: 20px;
     text-align: center;
     width: 100%;
-    background-color: #FF9966;
+    background-color: #ff9966;
     z-index: 999;
+}
+
+.btn-gohome {
+    text-align: center;
+    font-size: 16px;
 }

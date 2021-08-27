@@ -38,7 +38,7 @@
                     </div>
                 </div>
                 @else
-                <a class="btn-register" href="{{route('auth.show')}}">Đăng Kí</a>
+                <a class="btn-register" href="{{route('auth.signupshow')}}">Đăng Kí</a>
                 <a class="btn-register" href="{{route('login')}}">Đăng Nhập</a>
                 @endif
             </div>

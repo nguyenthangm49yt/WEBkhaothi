@@ -41,9 +41,9 @@
         </div> -->
 
     </div>
-    <div class="main">
-        <div class="left">
-            <div class="trangchu">
+    <div class="home-main">
+        <div class="home-left">
+            <div class="home-trangchu__linkbar">
                 <a href="#">
                     <h10>Trang chủ</10>
                 </a>
@@ -103,16 +103,70 @@
             <button>Xem Thêm</button>
 
         </div>
-        <div class="right">
-            <div>
+        <div class="home-right">
+            <div class="home-right--bao__title">
                 <h9>
                     Tin Tức
                 </h9>
             </div>
 
-            <div class="bao">
-                <button><a href="#">Mới Nhất</a></button>
-                <button><a href="#">Nổi Bật<table></table></a></button>
+            <div class="home-bao">
+                <!-- <button><a href="#">Mới Nhất</a></button>
+                <button><a href="#">Nổi Bật<table></table></a></button> -->
+                <div class="home-bao--child">
+                    <a class="img0" href="https://moet.gov.vn/tintuc/Pages/tin-tong-hop.aspx?ItemID=7488">
+                        <img src="https://moet.gov.vn/content/tintuc/PublishingImages/ttxvn_hoc_sinh_01.jpg?RenditionID=13" width="100%" height="100%">
+                    </a>
+                    <div class="f1">
+                        <h2><a href="/tintuc/Pages/tin-tong-hop.aspx?ItemID=7488" title="Ban hành Thông tư đánh giá học sinh trung học theo CT GDPT 2018">
+                                Ban hành Thông tư đánh giá học sinh trung học theo CT GDPT 2018
+                            </a></h2>
+                    </div>
+                </div>
+                <div class="home-bao--child">
+                    <a class="img0" href="https://moet.gov.vn/tintuc/Pages/tin-tong-hop.aspx?ItemID=7488">
+                        <img src="https://moet.gov.vn/content/tintuc/PublishingImages/tk%20sgk-607411.jpg?RenditionID=13" width="100%" height="100%">
+                    </a>
+                    <div class="f1">
+                        <h2><a href="/tintuc/Pages/tin-tong-hop.aspx?ItemID=7488" title="Ban hành Thông tư đánh giá học sinh trung học theo CT GDPT 2018">
+
+                                Tổng kết 1 năm triển khai CTGDPT 2018: Kiên định mục tiêu đổi mới
+                            </a></h2>
+                    </div>
+                </div>
+                <div class="home-bao--child">
+                    <a class="img0" href="https://moet.gov.vn/tintuc/Pages/tin-tong-hop.aspx?ItemID=7488">
+                        <img src="https://moet.gov.vn/content/tintuc/PublishingImages/tong%20ket%20giao%20duc%20mam%20non-6622.jpg?RenditionID=13" width="100%" height="100%">
+                    </a>
+                    <div class="f1">
+                        <h2><a href="/tintuc/Pages/tin-tong-hop.aspx?ItemID=7488" title="Ban hành Thông tư đánh giá học sinh trung học theo CT GDPT 2018">
+
+                                Giáo dục mầm non năm học mới: Phấn đấu ba chữ “Yên”
+                            </a></h2>
+                    </div>
+                </div>
+                <div class="home-bao--child">
+                    <a class="img0" href="https://moet.gov.vn/tintuc/Pages/tin-tong-hop.aspx?ItemID=7488">
+                        <img src="https://moet.gov.vn/content/tintuc/PublishingImages/tuyen-sinh-4.jpg?RenditionID=13" width="100%" height="100%">
+                    </a>
+                    <div class="f1">
+                        <h2><a href="/tintuc/Pages/tin-tong-hop.aspx?ItemID=7488" title="Ban hành Thông tư đánh giá học sinh trung học theo CT GDPT 2018">
+
+                                Những hướng dẫn quan trọng đảm bảo tuyển sinh nghiêm túc, an toàn
+                            </a></h2>
+                    </div>
+                </div>
+                <div class="home-bao--child">
+                    <a class="img0" href="https://moet.gov.vn/tintuc/Pages/tin-tong-hop.aspx?ItemID=7488">
+                        <img src="https://moet.gov.vn/content/tintuc/PublishingImages/ti%E1%BA%BFp%20nh%E1%BA%ADn%20h%E1%BB%8Dc%20sinh.jpg?RenditionID=13" width="100%" height="100%">
+                    </a>
+                    <div class="f1">
+                        <h2><a href="/tintuc/Pages/tin-tong-hop.aspx?ItemID=7488" title="Ban hành Thông tư đánh giá học sinh trung học theo CT GDPT 2018">
+                                Bộ GDĐT đề nghị địa phương tiếp nhận học sinh từ vùng dịch về quê học tập
+                            </a></h2>
+                    </div>
+                </div>
+
             </div>
             <div>
 

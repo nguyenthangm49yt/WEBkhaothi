@@ -5,16 +5,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport">
-    <title>Document</title>
+    <title>Cập nhật hồ sơ</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 
 <body>
     @if(session('alert'))
-
-    {{session('alert')}}
-
+    <div style="background-color: #FF9966; padding:10px; text-align:center">
+        {{session('alert')}}
+    </div>
     @endif
 
     <table border="0" bgcolor="#CCFFFF" width="100%" cellpading="0" cellspacing="0">
@@ -28,7 +28,6 @@
     <form id="form_hoso_update" action="{{route('hoso.updatestore')}}" method="post" enctype="multipart/form-data">
         {{ csrf_field()}}
         <hr>
-
 
         <div>
             <fieldset class="styleset">
@@ -54,7 +53,7 @@
                             <td colspan="2"><input type="text" name="name" size="30" value="{{$hoso->name}}" style="height:28;width:100%;font-size: 12pt"></td>
                             <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2. Giới tính: </td>
                             <td>
-                                Nam <input type="radio" name="gender" value="0" {{($hoso->gender == 0) ? "checked": ""}}>
+                                Nam<input type="radio" name="gender" value="0" {{($hoso->gender == 0) ? "checked": ""}}>
                                 Nữ<input type="radio" name="gender" value="1" {{($hoso->gender == 1) ? "checked": ""}}>
                             </td>
 
@@ -66,14 +65,17 @@
                             <td>       4. Nơi sinh:</td>
                             <td><input type="text" name="place_of_birth" value="{{$hoso->place_of_birth}}"></td>
                             <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5. Dân tộc:</td>
-                            <td><select size="1" name="nation_type" style="height:27px;font-size:12pt">;<option value="0"> -Chọn dân tộc- </option>
+                            <td>
+                                <select size="1" name="nation_type" style="height:27px;font-size:12pt;">
+                                    <option value="0"> -Chọn dân tộc- </option>
 
                                     @foreach($dantoc as $key => $dt)
                                     <option value="{{$key+1}}" {{($hoso->nation_type == $key+1)? "selected" : ""}}>
                                         {{$dt->name}}
                                     </option>
                                     @endforeach
-                                </select></td>
+                                </select>
+                            </td>
 
                         </tr>
                         <tr height="32">
@@ -286,7 +288,15 @@
                 <table width="100%" border="1" cellpadding="0" cellspacing="0" style="font-family: Times New Roman; font-size: 12pt">
                     <tbody>
                         <tr height="32">
-                            <td width="33%" align="center" "=""><b>Lớp 10</b> </td><td cwidth=" 33%" align="center" "=""><b>Lớp 11</b> </td><td align=" center"><b>Lớp 12 </b></td>
+                            <td width="33%" align="center" "="">
+                                <b>Lớp 10</b> 
+                            </td>
+                            <td cwidth=" 33%" align="center" "="">
+                                <b>Lớp 11</b> 
+                            </td>
+                            <td align=" center">
+                                <b>Lớp 12 </b>
+                            </td>
                         </tr>
                         <tr>
                             <td>
@@ -330,7 +340,7 @@
                                             <td align="center"> Cả năm (*)</td>
                                         </tr>
                                         <tr>
-                                            <td align="center"><input type="text"  min="1" max="10" id='lop12_diemki1' name="lop12_diemki1" value="{{$hoso->lop12_diemki1}}" style="text-align: center;height:28;width:80%;font-size: 12pt" onchange="checkdiem3()"></td>
+                                            <td align="center"><input type="text" min="1" max="10" id='lop12_diemki1' name="lop12_diemki1" value="{{$hoso->lop12_diemki1}}" style="text-align: center;height:28;width:80%;font-size: 12pt" onchange="checkdiem3()"></td>
                                             <td align="center"><input type="text" id='lop12_diemki2' name="lop12_diemki2" value="{{$hoso->lop12_diemki2}}" style="text-align: center;height:28;width:80%;font-size: 12pt" onchange="checkdiem3()"> </td>
                                             <td align="center"><input type="text" id='lop12_diemtong' name="lop12_diemtong" value="{{$hoso->lop12_diemtong}}" style="text-align: center;height:28;width:80%;font-size: 12pt" onchange="JavaScript:checkdiem(L12CN);" readonly="readonly"></td>
                                         </tr>
@@ -376,17 +386,17 @@
                             <td align="center"><b>GDCD</b></td>
                         </tr>
                         <tr>
-                            <td align="center"><input type="text" name="dToan" value="{{$hoso->dToan}}" style="text-align: center;height:28;width:80%;font-size: 12p" onchange="JavaScript:checkdiem(dToan);"></td>
-                            <td align="center"><input type="text" name="dVan" value="{{$hoso->dVan}}" style="text-align: center;height:28;width:80%;font-size: 12pt" onchange="JavaScript:checkdiem(dVan);"> </td>
-                            <td align="center"><input type="text" name="dNgoaiNgu" value="{{$hoso->dNgoaiNgu}}" style="text-align: center;height:28;width:80%;font-size: 12pt" onchange="JavaScript:checkdiem(dNgoaingu);"></td>
+                            <td align="center"><input type="text" id="dToan" name="dToan" value="{{$hoso->dToan}}" style="text-align: center;height:28;width:80%;font-size: 12p" onchange="JavaScript:checkdiem(this.name);"></td>
+                            <td align="center"><input type="text" id="dVan" name="dVan" value="{{$hoso->dVan}}" style="text-align: center;height:28;width:80%;font-size: 12pt" onchange="JavaScript:checkdiem(this.name);"> </td>
+                            <td align="center"><input type="text" id="dNgoaiNgu" name="dNgoaiNgu" value="{{$hoso->dNgoaiNgu}}" style="text-align: center;height:28;width:80%;font-size: 12pt" onchange="JavaScript:checkdiem(this.name);"></td>
 
-                            <td align="center"><input type="text" name="dLy" value="{{$hoso->dLy}}" style="text-align: center;height:28;width:80%;font-size: 12pt" onchange="JavaScript:checkdiem(dLy);"></td>
-                            <td align="center"><input type="text" name="dHoa" value="{{$hoso->dHoa}}" style="text-align: center;height:28;width:80%;font-size: 12pt" onchange="JavaScript:checkdiem(dHoa);"> </td>
-                            <td align="center"><input type="text" name="dSinh" value="{{$hoso->dSinh}}" style="text-align: center;height:28;width:80%;font-size: 12pt" onchange="JavaScript:checkdiem(dSinh);"></td>
+                            <td align="center"><input type="text" id="dLy" name="dLy" value="{{$hoso->dLy}}" style="text-align: center;height:28;width:80%;font-size: 12pt" onchange="JavaScript:checkdiem(this.name);"></td>
+                            <td align="center"><input type="text" id="dHoa" name="dHoa" value="{{$hoso->dHoa}}" style="text-align: center;height:28;width:80%;font-size: 12pt" onchange="JavaScript:checkdiem(this.name);"> </td>
+                            <td align="center"><input type="text" id="dSinh" name="dSinh" value="{{$hoso->dSinh}}" style="text-align: center;height:28;width:80%;font-size: 12pt" onchange="JavaScript:checkdiem(this.name);"></td>
 
-                            <td align="center"><input type="text" name="dSu" value="{{$hoso->dSu}}" style="text-align: center;height:28;width:80%;font-size: 12pt" onchange="JavaScript:checkdiem(dSu);"></td>
-                            <td align="center"><input type="text" name="dDia" value="{{$hoso->dDia}}" style="text-align: center;height:28;width:80%;font-size: 12pt" onchange="JavaScript:checkdiem(dDia);"> </td>
-                            <td align="center"><input type="text" name="dGdcd" value="{{$hoso->dGdcd}}" style="text-align: center;height:28;width:80%;font-size: 12pt" onchange="JavaScript:checkdiem(dGDCD);"></td>
+                            <td align="center"><input type="text" id="dSu" name="dSu" value="{{$hoso->dSu}}" style="text-align: center;height:28;width:80%;font-size: 12pt" onchange="JavaScript:checkdiem(this.name);"></td>
+                            <td align="center"><input type="text" id="dDia" name="dDia" value="{{$hoso->dDia}}" style="text-align: center;height:28;width:80%;font-size: 12pt" onchange="JavaScript:checkdiem(this.name);"> </td>
+                            <td align="center"><input type="text" id="dGdcd" name="dGdcd" value="{{$hoso->dGdcd}}" style="text-align: center;height:28;width:80%;font-size: 12pt" onchange="JavaScript:checkdiem(this.name);"></td>
 
                         </tr>
                     </tbody>
@@ -409,7 +419,9 @@
                             Ghi nhận
                         </button>
 
-                        <input name="Send" type="hidden" value=""><a href="{{route('home')}}" class="button" ;font-size:="" 12pt;font-weight:bold;"="">Quay lại</a>&nbsp;<a href="#" class="button">Đăng ký đợt thi</a>
+                        <input name="Send" type="hidden" value="">
+                        <a href="{{route('home')}}" class="button" ;font-size:="" 12pt;font-weight:bold;"="">Quay lại</a>&nbsp;
+                        <a href="{{route('dangkithi.show')}}" class="button">Đăng ký đợt thi</a>
                     </td>
                 </tr>
             </tbody>
@@ -432,10 +444,21 @@
             }
         }
     </script>
-  
-  <!-- auto calculate totalScore -->
+
+    <script>
+        function checkdiem(a) {
+            var score = document.getElementById(a).value;
+            if (score < 0 || score > 10) {
+                alert("Nhập sai điểm");
+                document.getElementById(a).value = 0;
+            }
+        }
+    </script>
+    <!-- auto calculate totalScore -->
     <script>
         function checkdiem1() {
+            checkdiem("lop10_diemki1");
+            checkdiem("lop10_diemki2");
             var total = 0;
             total = parseInt($('#lop10_diemki1').val()) + parseInt($('#lop10_diemki2').val());
             total /= 2;
@@ -446,6 +469,8 @@
 
     <script>
         function checkdiem2() {
+            checkdiem("lop11_diemki1");
+            checkdiem("lop11_diemki2");
             var total = 0;
             total = parseInt($('#lop11_diemki1').val()) + parseInt($('#lop11_diemki2').val());
             total /= 2;
@@ -456,6 +481,8 @@
 
     <script>
         function checkdiem3() {
+            checkdiem("lop12_diemki1");
+            checkdiem("lop12_diemki2");
             var total = 0;
             total = parseInt($('#lop12_diemki1').val()) + parseInt($('#lop12_diemki2').val());
             total /= 2;
@@ -464,7 +491,7 @@
         }
     </script>
 
-<!-- call data of districts -->
+    <!-- call data of districts -->
     <script type=text/javascript>
         $('#hk_tinh').on('change', function() {
             console.log(this.value);
@@ -490,7 +517,7 @@
         });
     </script>
 
-<!-- call data of districts -->
+    <!-- call data of districts -->
     <script type=text/javascript>
         $('#Tinhlop10').on('change', function() {
             console.log(this.value);
@@ -516,7 +543,7 @@
         });
     </script>
 
-<!-- call data of districts -->
+    <!-- call data of districts -->
     <script type=text/javascript>
         $('#Tinhlop11').on('change', function() {
             console.log(this.value);
@@ -542,7 +569,7 @@
         });
     </script>
 
-<!-- call data of districts -->
+    <!-- call data of districts -->
     <script type=text/javascript>
         $('#Tinhlop12').on('change', function() {
             console.log(this.value);
@@ -568,7 +595,7 @@
         });
     </script>
 
-<!-- recaptcha -->
+    <!-- recaptcha -->
     <script>
         var recaptcha_response = '';
 

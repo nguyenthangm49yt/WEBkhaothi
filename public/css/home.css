@@ -185,7 +185,7 @@ body {
 	font-size: 20px;
 }
 .main .dotthi {
-	padding-left: ;
+	padding-left: 0;
 	padding-top: 50px;
 	display: inline-block;
 	float: left;
@@ -509,4 +509,107 @@ body {
 
 .close{
 	padding: 6px;
+}
+
+
+/* trang chu */
+.home-main{
+	display: flex;
+	flex-direction: row;
+	width:100%;
+	margin: 20px;
+}
+
+.home-left{
+	flex: 7;
+}
+
+.home-right{
+	flex:3;
+	margin-right: 20px;
+}
+
+.home-left button {
+	width: 130px;
+	height: 50px;
+	background-color: #007f49;
+	box-sizing: border-box;
+	display: inline-block;
+	border: 1 solid #007f49;
+	margin-top: 30px;
+	margin-left: 350px;
+	font-size: 20px;
+}
+.home-main .dotthi {
+	padding-left: 0;
+	padding-top: 50px;
+	display: inline-block;
+	float: left;
+}
+
+ 
+.home-main .tieude {
+	margin-top: 10px;
+	display: inline-block;
+	margin-left: 50px;
+}
+
+
+.home-main .tieude li a {
+	text-decoration: none;
+}
+.home-main .tieude li {
+	font-size: 25px;
+	list-style: none;
+}
+.home-main .tieude a:hover {
+	color: #9f224e;
+}
+.home-main .dotthi a img {
+	display: inline-block;
+	float: left;
+}
+
+.home-right h9{
+	font-size: 38px;
+	font-weight: 600;
+	
+}
+.home-right--bao__title{
+	margin-bottom: 20px;
+ 
+}
+.home-bao button{
+	width: 130px;
+	height: 50px;
+	background-color: #cdcdcd;
+	border: 1 solid #cdcdcd;
+	font-size: 20px;
+}
+
+.home-bao a{
+	color: #000;
+}
+
+.home-trangchu__linkbar{
+	font-size: 20px;
+}
+.home-bao--child{
+	display: flex;
+	margin-bottom: 20px;
+}
+.img0{
+	flex:4;
+    max-height: 82px;
+    max-width: 110px;
+	margin-right: 8px;
+}
+.f1{
+	flex:6;
+	font-size: 16px;
+}
+
+.f1 h2{
+ 
+	font-size: 18px;
 }

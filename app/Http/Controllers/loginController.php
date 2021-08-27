@@ -28,20 +28,19 @@ class loginController extends Controller
                 ->withInput();
         }
 
-
         $remember = $request->remember;
 
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password], $remember)) {
             if (Auth::user()->status != 1) {
-                return redirect()->route('auth.show')->with('message', 'Tài khoản này không còn hiệu lực');
+                return redirect()->route('login')->with('message', 'Tài khoản này không còn hiệu lực');
             }
-            if (Auth::user()->role == 1) {
+            if (Auth::user()->role == 0) {
                 return redirect()->route('home');
             } else {
                 return view('admin');
             }
         } else {
-            return redirect()->route('auth.login')->with('message', 'Đăng nhập thất bại');
+            return redirect()->route('auth.login')->with('message', 'Đăng nhập thất bại')->withErrors(['mes'=>'Tài khoản hoặc mật khẩu chưa chính xác']);
         }
     }
 

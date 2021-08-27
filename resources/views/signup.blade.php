@@ -25,7 +25,7 @@
         </div>
         <div class="container__right">
             <div class="dangki-form">
-                <form action="{{route('auth.post')}}" method="post" onSubmit="return checkPassword(this)">
+                <form action="{{route('auth.signuppost')}}" method="post" onSubmit="return checkPassword(this)">
                     {{ csrf_field()}}
                     <h1 class="header-title">Đăng Kí</h1>
                     <div class="input-box">
@@ -54,7 +54,7 @@
                         <i></i>
                         <input type="password" id="confirm_password" placeholder="Nhập lại mật khẩu" name="confirm_password">
                         @if ($errors->has('confirm_password'))
-                        <p class="mes_logs"> {{$errors->first('re_password')}}</p>
+                        <p class="mes_logs"> {{$errors->first('confirm_password')}}</p>
                         @endif
                     </div>
 
@@ -73,6 +73,11 @@
                         </button>
                     </div>
                 </form>
+
+
+            </div>
+            <div class="btn-gohome">
+                <a href="{{route('home')}}">Quay lại</a>
             </div>
         </div>
     </div>

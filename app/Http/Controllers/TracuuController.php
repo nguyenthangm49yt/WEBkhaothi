@@ -53,10 +53,10 @@ class TracuuController extends Controller
                                       dotthi.ngay_ket_thuc as ngay_ket_thuc,
                                       baithi.ten as baithi_name,
                                       diemthi.ten as diemthi_name,
+                                      diemthi.id as diemthi_id,
                                       dotthi_cathi.ten as cathi_name,
                                       diemthi.dia_chi as diemthi_diachi'))
             ->get();
-
 
         return view('detail3', [
             'hoso' => $hoso,

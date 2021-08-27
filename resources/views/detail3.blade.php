@@ -12,7 +12,7 @@
                 <h2> I. Thông tin cá nhân </h2>
 
                 <p> <b>Họ tên thí sinh: </b>{{$hoso->name}} </p>
-                <p> <b>Giới tính: </b>{{($hoso->gender? "Nam" : "Nữ")}} </p>
+                <p> <b>Giới tính: </b>{{($hoso->gender? "Nữ" : "Nam")}} </p>
                 <p> <b>Ngày sinh: </b>{{$hoso->birthday}} </p>
                 <p> <b>Số CMND/CCCD/Hộ chiếu: </b>{{$hoso->cmnd}} </p>
                 <p> <b>Hộ khẩu thường trú: </b>{{$hoso_hk_huyen->name}}, {{$hoso_hk_tinh->name}} </p>
@@ -25,8 +25,8 @@
                 <p><b>Thời gian: </b>{{$hsdt->ngay_bat_dau}} đến {{$hsdt->ngay_ket_thuc}}</p>
                 <p><b>Môn thi: </b>{{$hsdt->baithi_name}} </p>
                 <p><b>Ca thi: </b>{{$hsdt->cathi_name}} </p>
-                <p><b>Phòng thi: </b>{{$hsdt->diemthi_name}}</p>
-
+                <!-- <p><b>Phòng thi: </b>{{$hsdt->diemthi_name}}</p> -->
+                <p><b>Phòng thi: </b>1</p>
 
                 <br />
                 @endforeach

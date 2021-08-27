@@ -33,23 +33,30 @@
                         <i></i>
                         <input type="text" placeholder="Nhập email" name="email">
                         @if ($errors->has('email'))
-                        <p class="mes_logs">  {{$errors->first('email')}}</p>
+                        <p class="mes_logs"> {{$errors->first('email')}}</p>
                         @endif
                     </div>
                     <div class="input-box">
                         <i></i>
                         <input type="password" id="input-password" placeholder="Nhập mật khẩu" name="password">
+                       
                         @if ($errors->has('password'))
-                        <p class="mes_logs">   {{$errors->first('password')}}</p>
+                        <br/>
+                        <p class="mes_logs"> {{$errors->first('password')}}</p>
+                        @endif
+                        @if($errors->has('mes'))
+                        <br/>
+                        <p class="mes_logs">{{$errors->first('mes')}}</p>
                         @endif
                     </div>
 
                     <div class="captcha">
                         <div class="g-recaptcha" name="g-recaptcha-response" data-sitekey="6Lc7qAgcAAAAAKJhMxa2eJEVYEwLH3ubePbvF9pR"></div>
                         @if ($errors->has('g-recaptcha-response'))
-                        <p class="mes_logs">  {{$errors->first('g-recaptcha-response')}}</p>
+                        <p class="mes_logs"> {{$errors->first('g-recaptcha-response')}}</p>
                         @endif
                     </div>
+                    <br />
                     <div class="tick-box">
                         <input type="checkbox" id="checkbox" name="checkbox" onclick="handleShowPass()"><label class="checkbox-text">Hiện mật khẩu</label>
                     </div>
@@ -61,13 +68,16 @@
                     </div>
                     <div class="footer">
                         <div class="footer-opt">
-                            <p>Bạn chưa có tài khoản? <a href="#" title="Đăng kí">Đăng kí</a></p>
+                            <p>Bạn chưa có tài khoản? <a href="{{route('auth.signupshow')}}" title="Đăng kí">Đăng kí</a></p>
                         </div>
                         <div class="footer-opt">
                             <p>Quên <a href="#" title="Lấy lại mật khẩu">mật khẩu?</a></p>
                         </div>
                     </div>
                 </form>
+            </div>
+            <div class="btn-gohome">
+                <a href="{{route('home')}}">Quay lại</a>
             </div>
         </div>
     </div>

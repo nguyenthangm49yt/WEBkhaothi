@@ -24,8 +24,8 @@ Route::get('/', function () {
 })->name('home');
 
 // sign up and login
-Route::get('/signup', [SignupController::class, 'index'])->name('auth.show');
-Route::post('/signup', [SignupController::class, 'store'])->name('auth.post');
+Route::get('/signup', [SignupController::class, 'index'])->name('auth.signupshow');
+Route::post('/signup', [SignupController::class, 'store'])->name('auth.signuppost');
 Route::get('/login', [loginController::class, 'index'])->name('login');
 Route::post('/login', [loginController::class, 'login'])->name('auth.login');
 Route::get('/logout', [loginController::class, 'logout'])->name('auth.logout');

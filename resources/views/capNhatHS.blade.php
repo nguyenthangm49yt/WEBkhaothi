@@ -420,8 +420,8 @@
                         </button>
 
                         <input name="Send" type="hidden" value="">
-                        <a href="{{route('home')}}" class="button" ;font-size:="" 12pt;font-weight:bold;"="">Quay lại</a>&nbsp;
-                        <a href="{{route('dangkithi.show')}}" class="button">Đăng ký đợt thi</a>
+                        <a href="{{route('home')}}" class="button" style="    margin-left: 20px;">Quay lại</a>&nbsp;
+                        <a href="{{route('dangkithi.show')}}" style="    margin-left: 20px;" class="button">Đăng ký đợt thi</a>
                     </td>
                 </tr>
             </tbody>

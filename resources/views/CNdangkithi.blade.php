@@ -8,9 +8,10 @@
 
 <body>
     @if(session('message'))
-    <span>
+    <div style="padding: 15px;
+    background-color: #bc9afb;">
         <strong>{{session('message')}}</strong>
-    </span>
+    </div>
     @endif
     <table border="0" bgcolor="#00CCFF" width="100%" cellpading="1" cellspacing="1">
         <tbody>
@@ -111,7 +112,9 @@
             <a href="{{route('home')}}">
                 <input name="Send" type="button" value="Về trang chủ" style="height:27px;font-size:12pt;font-weight:bold;width:120pt" class="button2">
             </a>
-            <input name="Send" type="button" id="quaylai" value="Quay lại" style="height:27px;font-size:12pt;font-weight:bold;width:120pt" class="button2">
+            <a href="{{route('home')}}">
+                <input name="Send" type="button" id="quaylai" value="Quay lại" style="height:27px;font-size:12pt;font-weight:bold;width:120pt" class="button2">
+            </a>
         </td>
     </div>
 

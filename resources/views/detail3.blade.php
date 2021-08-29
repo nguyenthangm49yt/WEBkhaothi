@@ -5,7 +5,7 @@
 
 <body>
 
-    <div class="detail3-container" id="detail3-container" style="overflow: visible;">
+    <div class="detail3-container" id="detail3-container" style="overflow-y:scroll; max-height:100%">
         <div class="left" style="font-size: 20px;">
 
             <div style="margin-left: 50px;">
@@ -18,7 +18,8 @@
                 <p> <b>Hộ khẩu thường trú: </b>{{$hoso_hk_huyen->name}}, {{$hoso_hk_tinh->name}} </p>
 
                 <h2> II. Thông tin dự thi </h2>
-                @foreach($hosoduthi as $hsdt)
+                @foreach($hosoduthi as $key => $hsdt)
+                <p> <i>Bài thi số {{$key+1}}</i></p>
                 <p><b>Số báo danh: </b></p>
                 <p><b>Địa điểm dự thi: </b>{{$hsdt->diemthi_diachi}} </p>
                 <p><b>Tên kì thi: </b>{{$hsdt->dotthi_name}} </p>

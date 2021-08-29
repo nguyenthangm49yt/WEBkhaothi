@@ -390,7 +390,7 @@
                         <button type="submit">
                             Ghi nhận
                         </button>
-                        <a href="{{route('home')}}" class="button">Quay lại</a>
+                        <a href="{{route('home')}}" class="button" style="    margin-left: 20px;">Quay lại</a>
                         &nbsp;
 
                     </td>

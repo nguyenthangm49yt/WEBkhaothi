@@ -5,28 +5,29 @@
 
 <body>
 
-    <div class="detail3-container" id="detail3-container" style="overflow: visible;">
+    <div class="detail3-container" id="detail3-container" style="overflow-y:scroll; max-height:100%">
         <div class="left" style="font-size: 20px;">
 
             <div style="margin-left: 50px;">
                 <h2> I. Thông tin cá nhân </h2>
 
                 <p> <b>Họ tên thí sinh: </b>{{$hoso->name}} </p>
-                <p> <b>Giới tính: </b>{{($hoso->gender? "Nam" : "Nữ")}} </p>
+                <p> <b>Giới tính: </b>{{($hoso->gender? "Nữ" : "Nam")}} </p>
                 <p> <b>Ngày sinh: </b>{{$hoso->birthday}} </p>
                 <p> <b>Số CMND/CCCD/Hộ chiếu: </b>{{$hoso->cmnd}} </p>
                 <p> <b>Hộ khẩu thường trú: </b>{{$hoso_hk_huyen->name}}, {{$hoso_hk_tinh->name}} </p>
 
                 <h2> II. Thông tin dự thi </h2>
-                @foreach($hosoduthi as $hsdt)
+                @foreach($hosoduthi as $key => $hsdt)
+                <p> <i>Bài thi số {{$key+1}}</i></p>
                 <p><b>Số báo danh: </b></p>
                 <p><b>Địa điểm dự thi: </b>{{$hsdt->diemthi_diachi}} </p>
                 <p><b>Tên kì thi: </b>{{$hsdt->dotthi_name}} </p>
                 <p><b>Thời gian: </b>{{$hsdt->ngay_bat_dau}} đến {{$hsdt->ngay_ket_thuc}}</p>
                 <p><b>Môn thi: </b>{{$hsdt->baithi_name}} </p>
                 <p><b>Ca thi: </b>{{$hsdt->cathi_name}} </p>
-                <p><b>Phòng thi: </b>{{$hsdt->diemthi_name}}</p>
-
+                <!-- <p><b>Phòng thi: </b>{{$hsdt->diemthi_name}}</p> -->
+                <p><b>Phòng thi: </b>1</p>
 
                 <br />
                 @endforeach

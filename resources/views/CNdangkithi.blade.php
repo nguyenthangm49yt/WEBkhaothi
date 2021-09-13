@@ -2,15 +2,16 @@
 <html>
 
 <head>
-    <title>dang ki thi</title>
+    <title>Cập nhật Đăng kí thi</title>
     <link href="{{asset('/css/dangkithi.css')}}" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
     @if(session('message'))
-    <span>
+    <div style="padding: 15px;
+    background-color: #bc9afb;">
         <strong>{{session('message')}}</strong>
-    </span>
+    </div>
     @endif
     <table border="0" bgcolor="#00CCFF" width="100%" cellpading="1" cellspacing="1">
         <tbody>
@@ -21,7 +22,7 @@
             </tr>
             <tr>
                 <td width="30%" align="right"></td>
-                <td width="30%" align="right"><i> Đăng nhập:Nguyễn Văn Nhất(nhatnguyenvan00001@gmail.com) </i></td>
+                <td width="30%" align="right"><i> Đăng nhập: {{$hoso->name}} ({{$hoso->email}} ) </i></td>
             </tr>
         </tbody>
     </table>
@@ -34,7 +35,7 @@
                     - Tất cả Đợt thi:
                     <input type="radio" name="ckLoaikythiall" value="3" onclick="ckdotthiAll()">
                 </td>
-                <td width="20%"><small><i>(Số Đợt thi:[0] - bạn chưa đăng ký đơt thi nào)</i></small>
+                <td width="20%"><small><i>(Số Đợt thi bạn đã đăng kí: {{sizeof($dotthis)}} )</i></small>
                 </td>
                 <td width="5%">Trang: </td>
                 <td width="4%"><input type="text" value="1" name="page" style="width:100%"></td>
@@ -111,10 +112,15 @@
             <a href="{{route('home')}}">
                 <input name="Send" type="button" value="Về trang chủ" style="height:27px;font-size:12pt;font-weight:bold;width:120pt" class="button2">
             </a>
-            <input name="Send" type="button" id="quaylai" value="Quay lại" style="height:27px;font-size:12pt;font-weight:bold;width:120pt" class="button2">
+            <a href="{{route('home')}}">
+                <input name="Send" type="button" id="quaylai" value="Quay lại" style="height:27px;font-size:12pt;font-weight:bold;width:120pt" class="button2">
+            </a>
         </td>
     </div>
 
+
+
+    <!-- javascript -->
     <script>
         function ckdotthiAll() {
             window.location.href = '{{route("dangkithi.show")}}';

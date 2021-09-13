@@ -51,7 +51,12 @@ td {
     margin-top: 100px;
 }
 .xacnhan {
-    margin-top: 30px;
+    /* margin-top: -47px; */
+    float: left;
+    /* text-decoration: none; */
+}
+.xacnhan a{
+    text-decoration: none;
 }
 .button0 {
     background-color: #3498db;
@@ -124,6 +129,7 @@ td {
     padding-top: 1px;
     padding-bottom: 1px;
     margin-top: 30px;
+    margin-bottom: 20px;
 }
 
 ul {
@@ -192,4 +198,8 @@ ul {
 }
 .ul-cathi li{
     padding-right: 25px;
+}
+
+.dangkithi-mes__error{
+    color: red;
 }

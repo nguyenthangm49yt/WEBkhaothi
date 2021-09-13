@@ -64,9 +64,9 @@ class SignupController extends Controller
                 $newUser->status = 1;
                 $newUser->role = 0;
                 $newUser->save();
-                return redirect()->route('auth.show')->with('message', 'Bạn đã tạo tk thành công, mời đăng nhập');
+                return redirect()->route('auth.signupshow')->with('message', 'Bạn đã tạo tài khoản thành công, mời đăng nhập');
             } else {
-                return redirect()->route('login')->with('message', 'TK đã tồn tại, mời đăng nhập');
+                return redirect()->route('auth.signupshow')->with('message', 'Tài khoản đã tồn tại, mời đăng nhập');
             }
         }
     }
